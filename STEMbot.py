@@ -278,7 +278,7 @@ async def show_classes(callback: types.CallbackQuery):
 @dp.callback_query(lambda c: c.data.startswith("class_"))
 async def send_class_link(callback: types.CallbackQuery):
     class_name = callback.data.split("_")[1]
-    links = {
+links = {
             '0 класс STEM': 'https://drive.google.com/file/d/10AysxxzZsap6DDtdcFX-Ejk5VqtjohdQ/view?usp=sharing',
             '1 класс STEM': 'https://drive.google.com/file/d/1y8d_0nrbZ6lB7QjJk88W0ADORDj4UlHY/view?usp=sharing',
             '2 класс STEM': 'https://drive.google.com/file/d/1zB_i5RojmmcXgoNMVRoXlN7nyCZZn_Mn/view?usp=sharing',
@@ -294,7 +294,7 @@ async def send_class_link(callback: types.CallbackQuery):
             '7 класс PSHE': 'https://drive.google.com/file/d/1FX04ezKVxZDplSRoN0IGhOtM3et0c8-M/view?usp=drive_link',
             '8 класс PSHE': 'https://drive.google.com/file/d/174OHI_zwc30bvABnVcPROu-HEhXx7Q4X/view?usp=drive_link',
             '9 класс PSHE': 'https://drive.google.com/file/d/1U20ERIIS8dbYJoA0gjDuyPNsTT7Pm2Vt/view?usp=sharing'
-        }
+    }
     link = links.get(class_name, "Ссылка не найдена.")
     await callback.message.answer(f"📥 {class_name}: {link}")
 
